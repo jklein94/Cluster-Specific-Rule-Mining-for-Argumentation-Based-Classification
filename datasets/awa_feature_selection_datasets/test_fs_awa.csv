@@ -1,0 +1,11 @@
+animal,lean,bulbous,active,agility,slow,gray
+bobcat,1,0,1,1,0,0
+pig,0,1,0,0,1,1
+lion,1,1,1,1,0,0
+mouse,0,0,1,1,0,1
+polarbear,0,1,1,1,1,0
+collie,1,0,1,1,0,0
+walrus,0,1,0,0,1,1
+raccoon,0,0,1,1,0,1
+cow,0,1,1,0,1,0
+dolphin,1,0,1,1,0,1

@@ -1,0 +1,28 @@
+experiment_name: awa_arctic
+save_to: awa_experiments
+train_csv_data_path: datasets/awa/train_awa.csv
+test_csv_data_path: datasets/awa/test_awa.csv
+threshold_strict_rules: 1.0
+num_runs: 5
+kmodes_configs:
+  n_clusters: 7
+  init: 'random'
+  n_init: 40
+  exclude_column: 'animal'
+  verbose: 1
+rule_mining_configs:
+  algorithm: 'fpgrowth'
+  min_support: 0.7
+  min_confidence: 0.9
+  clustered: True
+  filter: True
+  filter_function: 'thimm'
+  select_features: True
+  top_k_features: 4
+
+classification_configs:
+  attribute_to_predict: 'arctic'
+tweety_configs: null
+
+cluster_model_path: null # If cluster model is already trained
+rule_file: null # if rules are already mined

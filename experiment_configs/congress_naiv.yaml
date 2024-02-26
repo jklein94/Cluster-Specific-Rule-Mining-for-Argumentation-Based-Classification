@@ -1,0 +1,29 @@
+experiment_name: congress_naiv
+num_runs: 5
+save_to: /home/jklein/dev/argumentation_based_classification/naiv_experiments
+train_csv_data_path: /home/jklein/dev/argumentation_based_classification/datasets/congress/train_congress.csv
+test_csv_data_path: /home/jklein/dev/argumentation_based_classification/datasets/congress/test_congress.csv
+threshold_strict_rules: 1.0
+kmodes_configs:
+  n_clusters: 7
+  init: 'random'
+  n_init: 40
+  exclude_column: 'animal'
+  verbose: 1
+rule_mining_configs:
+#algo='fpgrowth',min_support=0.8,min_conf=0.9,save_to=None,clustered=False,filter=True, filter_function='thimm'
+  algorithm: 'fpgrowth'
+  min_support: 0.7
+  min_confidence: 0.9
+  clustered: False
+  filter: True
+  filter_function: 'thimm'
+  select_features: False
+  top_k_features: 4
+
+classification_configs:
+  attribute_to_predict: 'party'
+tweety_configs: null
+
+cluster_model_path: null # If cluster model is already trained
+rule_file: null # if rules are already mined

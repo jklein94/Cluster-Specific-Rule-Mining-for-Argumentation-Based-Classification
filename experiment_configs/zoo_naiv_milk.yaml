@@ -1,0 +1,28 @@
+experiment_name: zoo_naiv_milk
+num_runs: 5
+save_to: naiv_experiments
+train_csv_data_path: datasets/zoo/train_zoo_clean.csv
+test_csv_data_path: datasets/zoo/test_zoo_clean.csv
+threshold_strict_rules: 1.0
+kmodes_configs:
+  n_clusters: 7
+  init: 'random'
+  n_init: 40
+  exclude_column: 'animal'
+  verbose: 1
+rule_mining_configs:
+  algorithm: 'apriori'
+  min_support: 0.7
+  min_confidence: 0.9
+  clustered: False
+  filter: True
+  filter_function: 'thimm'
+  select_features: False
+  top_k_features: 4
+
+classification_configs:
+  attribute_to_predict: 'milk'
+tweety_configs: null
+
+cluster_model_path: null # If cluster model is already trained
+rule_file: null # if rules are already mined

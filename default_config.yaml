@@ -1,0 +1,28 @@
+experiment_name: AwA_fs
+save_to: null
+train_csv_data_path: /home/jklein/dev/argumentation_based_classification/awa_feature_selection_datasets/train_fs_awa.csv
+test_csv_data_path: /home/jklein/dev/argumentation_based_classification/awa_feature_selection_datasets/test_fs_awa.csv
+threshold_strict_rules: 1.0
+kmodes_configs:
+  n_clusters: 5
+  init: 'random'
+  n_init: 10
+  exclude_column: 'animal'
+  verbose: 1
+rule_mining_configs:
+#algo='fpgrowth',min_support=0.8,min_conf=0.9,save_to=None,clustered=False,filter=True, filter_function='thimm'
+  algorithm: 'fpgrowth'
+  min_support: 0.8
+  min_confidence: 0.9
+  clustered: True
+  filter: True
+  filter_function: 'thimm'
+  select_features: True
+  top_k_features: 5
+
+classification_configs:
+  attribute_to_predict: 'lean'
+tweety_configs: null
+
+cluster_model_path: null # If cluster model is already trained
+rule_file: null # if rules are already mined

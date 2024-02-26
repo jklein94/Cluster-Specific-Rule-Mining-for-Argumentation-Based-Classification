@@ -1,0 +1,28 @@
+experiment_name: car_naiv
+num_runs: 5
+save_to: naiv_experiments
+train_csv_data_path: datasets/car/train_car.csv
+test_csv_data_path: datasets/car/test_car.csv
+threshold_strict_rules: 1.0
+kmodes_configs:
+  n_clusters: 7
+  init: 'random'
+  n_init: 40
+  exclude_column: 'animal'
+  verbose: 1
+rule_mining_configs:
+  algorithm: 'apriori'
+  min_support: 0.7
+  min_confidence: 0.9
+  clustered: False
+  filter: True
+  filter_function: 'thimm'
+  select_features: False
+  top_k_features: 4
+
+classification_configs:
+  attribute_to_predict: 'safety_low'
+tweety_configs: null
+
+cluster_model_path: null # If cluster model is already trained
+rule_file: null # if rules are already mined
